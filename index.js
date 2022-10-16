@@ -16,7 +16,7 @@ app.post('/claim', async (req, res) => {
 });
 
 app.get('/nft', async (req, res) => {
-    const address = req.body.address;
+    const address = req.query.address;
     const sdk = ThirdwebSDK.fromPrivateKey("devnet", "5gbQAvWmVh3FKiqR1gG9H2mdRWNCopw2DsdP2cNJdGVaKJHtpSTWUgwm2k2e1N5mt87vcmZ3o24LvvsBUbqXnF1Z");
     const program = await sdk.getProgram("CSGNCbybDTaNU29R7Baf9CeM4wj48494jYKD6CL6gSjs", "nft-drop");
     const nfts = await program.get(address);
