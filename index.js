@@ -2,6 +2,7 @@ import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana";
 import express, { response } from "express";
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
@@ -22,6 +23,6 @@ app.get('/nft', async (req, res) => {
     res.send(nfts);
 });
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log("Listening on port 5000");
 });
